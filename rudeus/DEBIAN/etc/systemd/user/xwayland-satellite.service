@@ -1,0 +1,13 @@
+[Unit]
+Description=XWayland Satellite
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+Type=exec
+ExecStart=/usr/local/bin/xwayland-satellite
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

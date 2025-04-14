@@ -1,0 +1,23 @@
+[workspace]
+members = ["crates/rudeus-niri"]
+resolver = "3"
+
+[workspace.package]
+authors = ["Enzo Le Van <dev@enzo-le-van.fr>"]
+description = "Rudeus is a debian desktop environment in Rust."
+edition = "2024"
+homepage = "https://github.com/Hennzau/rudeus"
+keywords = []
+readme = "README.md"
+rust-version = "1.85"
+categories = []
+documentation = "https://github.com/Hennzau/rudeus"
+license = "Apache-2.0"
+repository = "https://github.com/Hennzau/rudeus"
+version = "0.2.2"
+
+[workspace.dependencies]
+eyre = { version = "0.6", default-features = false, features = [
+    "auto-install",
+] }
+tokio = { version = "1", features = ["full"] }

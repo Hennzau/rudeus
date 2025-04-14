@@ -1,2 +1,6 @@
+#!/bin/bash
+
 ln -s /etc/systemd/user/eww.service /etc/systemd/user/niri.service.wants/
 ln -s /etc/systemd/user/xwayland-satellite.service /etc/systemd/user/niri.service.wants/
+
+fc-cache -fv

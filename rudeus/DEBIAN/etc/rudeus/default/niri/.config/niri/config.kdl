@@ -1,0 +1,189 @@
+input {
+    keyboard {
+        xkb {
+		    layout "fr"
+        }
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+        dwt
+    }
+    mouse {
+
+    }
+
+    trackpoint {
+    }
+}
+
+output "eDP-1" {
+    mode "1920x1080@120.030"
+
+    scale 1
+
+    transform "normal"
+
+    position x=0 y=0
+}
+
+layout {
+    gaps 10
+
+    center-focused-column "never"
+
+    preset-column-widths {
+        proportion 1.0
+    }
+
+    preset-window-heights {
+        proportion 1.0
+    }
+
+    default-column-width { proportion 1.0; }
+
+    focus-ring {
+        width 4
+
+        active-color "#cba6f7"
+
+        inactive-color "#a6adc8"
+    }
+
+    border {
+        off
+    }
+
+    struts {
+    }
+
+    shadow {
+        on
+    }
+}
+
+prefer-no-csd
+
+screenshot-path "/home/enzo/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+animations {
+}
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"Alacritty$"#
+    default-column-width { proportion 0.5; }
+}
+
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+    min-width 300
+    min-height 300
+}
+
+window-rule {
+    match is-window-cast-target=true
+
+    focus-ring {
+        active-color "#cba6f7"
+        inactive-color "#a6adc8"
+    }
+
+    border {
+        inactive-color "#a6adc8"
+    }
+
+    shadow {
+        color "#7d0d2d70"
+    }
+
+    tab-indicator {
+        active-color "#cba6f7"
+        inactive-color "#a6adc8"
+    }
+}
+
+spawn-at-startup "xwayland-satellite"
+
+environment {
+    DISPLAY ":0"
+}
+
+binds {
+    Mod+Shift+D { show-hotkey-overlay; }
+
+    Mod+Return { spawn "alacritty"; }
+    Mod+E { spawn "alacritty" "-e" "yazi"; }
+    Mod+Q { spawn "eww" "close" "top-bar"; }
+
+    Super+L { quit; }
+
+    Mod+Shift+A { close-window; }
+
+    Mod+Left  { focus-column-left; }
+    Mod+Down  { focus-window-down; }
+    Mod+Up    { focus-window-up; }
+    Mod+Right { focus-column-right; }
+
+    Mod+Shift+Down  { move-window-down; }
+    Mod+Shift+Up    { move-window-up; }
+    Mod+Shift+Left  { consume-or-expel-window-left; }
+    Mod+Shift+Right { consume-or-expel-window-right; }
+
+    Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
+    Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
+
+    Mod+ampersand { focus-workspace 1; }
+    Mod+eacute { focus-workspace 2; }
+    Mod+quotedbl { focus-workspace 3; }
+    Mod+apostrophe { focus-workspace 4; }
+    Mod+parenleft { focus-workspace 5; }
+    Mod+minus { focus-workspace 6; }
+    Mod+egrave { focus-workspace 7; }
+    Mod+underscore { focus-workspace 8; }
+    Mod+ccedilla { focus-workspace 9; }
+
+    Mod+Shift+ampersand { move-window-to-workspace 1; }
+    Mod+Shift+eacute { move-window-to-workspace 2; }
+    Mod+Shift+quotedbl { move-window-to-workspace 3; }
+    Mod+Shift+apostrophe { move-window-to-workspace 4; }
+    Mod+Shift+parenleft { move-window-to-workspace 5; }
+    Mod+Shift+minus { move-window-to-workspace 6; }
+    Mod+Shift+egrave { move-window-to-workspace 7; }
+    Mod+Shift+underscore { move-window-to-workspace 8; }
+    Mod+Shift+ccedilla { move-window-to-workspace 9; }
+
+    Mod+R { expand-column-to-available-width; }
+
+    Mod+F { spawn "sh" "-c" "niri msg action switch-preset-window-width; niri msg action switch-preset-window-height"; }
+    Mod+Shift+F { fullscreen-window; }
+
+    Alt+Ctrl+Left { set-window-width "-10%"; }
+    Alt+Ctrl+Right { set-window-width "+10%"; }
+    Alt+Ctrl+Up { set-window-height "-10%"; }
+    Alt+Ctrl+Down { set-window-height "+10%"; }
+
+    Mod+Shift+Space { toggle-window-floating; }
+    Mod+Tab { switch-focus-between-floating-and-tiling; }
+
+    Print { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Alt+Print { screenshot-window; }
+
+    Mod+Shift+E { quit; }
+    Ctrl+Alt+Delete { quit; }
+
+    Mod+Shift+P { power-off-monitors; }
+}

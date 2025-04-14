@@ -1,0 +1,23 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-space": "file_finder::Toggle",
+
+      "ctrl-alt-o": "projects::OpenRecent",
+      "ctrl-t": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-space": "file_finder::Toggle",
+      "ctrl-t": "terminal_panel::ToggleFocus",
+
+      "ctrl-shift-up": "editor::MoveLineUp",
+      "ctrl-shift-down": "editor::MoveLineDown",
+
+      "ctrl-r": "editor::RestartLanguageServer"
+    }
+  }
+]

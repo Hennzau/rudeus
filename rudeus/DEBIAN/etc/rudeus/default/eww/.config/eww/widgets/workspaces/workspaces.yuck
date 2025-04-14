@@ -1,0 +1,21 @@
+(defvar reveal_workspaces false)
+
+(defwidget workspaces [orientation reveal workspaces]
+    (eventbox
+        :onhover "eww update reveal_workspaces=true"
+        :onhoverlost "eww update reveal_workspaces=false"
+        (revealer
+            :transition "slideright"
+            :reveal {reveal_workspaces || reveal}
+            :duration "350ms"
+            (box
+                :class "box-workspaces"
+                :orientation {orientation}
+                :spacing 0
+                (for workspace in workspaces
+                    (button
+                        :class {workspace.focused ? "workspace-active" : "workspace"}
+                        :onclick "niri msg action focus-workspace ${workspace.idx}"
+                        :hexpand true
+                        "${workspace.idx}"
+                    ))))))

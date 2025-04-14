@@ -1,0 +1,34 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette
+{
+  "icon_theme": "Catppuccin Mocha",
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "dark",
+    "light": "Night Owl Light",
+    "dark": "Catppuccin Mocha"
+  },
+  "autosave": "on_focus_change",
+  "terminal": {
+    "line_height": "standard",
+    "font_family": "CaskaydiaCove Nerd Font"
+  },
+  "auto_install_extensions": {
+    "html": true,
+    "scss": true,
+    "toml": true,
+    "just": true,
+    "fish": true,
+    "catppuccin-icons": true
+  }
+}

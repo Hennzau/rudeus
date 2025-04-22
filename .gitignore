@@ -20,5 +20,5 @@ target/
 *.deb
 artifacts/*
 !artifacts/.gitkeep
-DEBIAN/usr/local/bin/*
-!DEBIAN/usr/local/bin/*.sh
+rudeus/usr/local/bin/*
+!rudeus/usr/local/bin/*.sh

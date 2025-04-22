@@ -26,11 +26,11 @@ build-artifacts:
     cd artifacts/eww && cargo build --release --no-default-features --features=wayland
 
 move-artifacts:
-    cp artifacts/alacritty/target/release/alacritty rudeus/DEBIAN/usr/local/bin
-    cp artifacts/niri/target/release/niri rudeus/DEBIAN/usr/local/bin
+    cp artifacts/alacritty/target/release/alacritty rudeus/usr/local/bin
+    cp artifacts/niri/target/release/niri rudeus/usr/local/bin
 
-    cp target/release/rudeus-niri rudeus/DEBIAN/usr/local/bin
+    cp target/release/rudeus-niri rudeus/usr/local/bin
 
-    cp artifacts/xwayland-satellite/target/release/xwayland-satellite rudeus/DEBIAN/usr/local/bin
-    cp artifacts/yazi/target/release/yazi rudeus/DEBIAN/usr/local/bin
-    cp artifacts/eww/target/release/eww rudeus/DEBIAN/usr/local/bin
+    cp artifacts/xwayland-satellite/target/release/xwayland-satellite rudeus/usr/local/bin
+    cp artifacts/yazi/target/release/yazi rudeus/usr/local/bin
+    cp artifacts/eww/target/release/eww rudeus/usr/local/bin

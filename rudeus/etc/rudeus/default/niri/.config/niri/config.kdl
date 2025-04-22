@@ -120,7 +120,7 @@ binds {
 
     Mod+Return { spawn "alacritty"; }
     Mod+E { spawn "alacritty" "-e" "yazi"; }
-    Mod+Q { spawn "eww" "close" "top-bar"; }
+    Mod+D { spawn "wofi" "--show" "drun"; }
 
     Super+L { quit; }
 

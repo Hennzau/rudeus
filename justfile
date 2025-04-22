@@ -1,4 +1,8 @@
+dev:
+    sudo chown -R enzo rudeus
+
 deb-build:
+    sudo chown -R root:root rudeus
     dpkg-deb --build rudeus rudeus_amd64.deb
 
 install-dependencies:

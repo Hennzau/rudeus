@@ -10,3 +10,6 @@ chmod +x /usr/local/bin/rudeus-config
 
 echo /usr/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/bin/fish
+
+systemctl --user enable eww-open@background
+systemctl --user enable eww-open@window-workspaces

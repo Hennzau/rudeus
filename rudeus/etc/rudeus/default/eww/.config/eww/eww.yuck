@@ -9,7 +9,7 @@
            :exclusive false
            :focusable false
   (image
-    :path "/home/enzo/.config/backgrounds/shaded.png"))
+    :path "/usr/local/share/backgrounds/shaded.png"))
 
 (deflisten rudeus
     :initial '{"reveal_workspaces": false, "workspaces": []}'

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir /etc/systemd/user/niri.service.wants/
+mkdir -p /etc/systemd/user/niri.service.wants/
 ln -s /etc/systemd/user/eww.service /etc/systemd/user/niri.service.wants/
 ln -s /etc/systemd/user/eww-open@.service /etc/systemd/user/niri.service.wants/eww-open@background.service
 ln -s /etc/systemd/user/eww-open@.service /etc/systemd/user/niri.service.wants/eww-open@window-workspaces.service

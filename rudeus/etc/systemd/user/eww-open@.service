@@ -6,8 +6,8 @@ After=eww.service
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/eww open --no-daemonize "%i"
-ExecStop=/usr/bin/eww close --no-daemonize "%i"
+ExecStart=/usr/local/bin/eww open --no-daemonize "%i"
+ExecStop=/usr/local/bin/eww close --no-daemonize "%i"
 RemainAfterExit=yes
 
 [Install]

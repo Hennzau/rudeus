@@ -1,6 +1,10 @@
 #!/bin/bash
 
+mkdir /etc/systemd/user/niri.service.wants/
 ln -s /etc/systemd/user/eww.service /etc/systemd/user/niri.service.wants/
+ln -s /etc/systemd/user/eww-open@.service /etc/systemd/user/niri.service.wants/eww-open@background.service
+ln -s /etc/systemd/user/eww-open@.service /etc/systemd/user/niri.service.wants/eww-open@window-workspaces.service
+
 ln -s /etc/systemd/user/xwayland-satellite.service /etc/systemd/user/niri.service.wants/
 
 fc-cache -fv
@@ -10,6 +14,3 @@ chmod +x /usr/local/bin/rudeus-config
 
 echo /usr/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/bin/fish
-
-systemctl --user enable eww-open@background
-systemctl --user enable eww-open@window-workspaces

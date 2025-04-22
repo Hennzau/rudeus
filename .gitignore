@@ -21,4 +21,5 @@ target/
 artifacts/*
 !artifacts/.gitkeep
 rudeus/usr/local/bin/*
-!rudeus/usr/local/bin/*.sh
+!rudeus/usr/local/bin/niri-session
+!rudeus/usr/local/bin/rudeus-config

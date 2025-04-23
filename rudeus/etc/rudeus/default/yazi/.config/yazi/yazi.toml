@@ -1,2 +1,5 @@
 [manager]
 show_hidden = false
+
+[opener]
+edit = [{ run = '~/.local/bin/zed "$0"', block = true, for = "unix" }]

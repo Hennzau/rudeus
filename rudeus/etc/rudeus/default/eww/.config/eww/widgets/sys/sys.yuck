@@ -10,6 +10,16 @@
             :initial "discharging"
             "scripts/get_pow_stat")
 
+(defpoll sound_volume
+            :interval "5s"
+            :initial "50"
+            "scripts/get_sound")
+
+(defpoll brightness
+            :interval "5s"
+            :initial "50"
+            "scripts/get_brightness")
+
 (defvar power_rev false)
 
 (defwidget power []
@@ -83,7 +93,7 @@
                         (scale
                             :class "scale-sys"
                             :min 0
-                            :value 20
+                            :value {brightness}
                             :max 100
                             :orientation "horizontal"
                             :onchange "brightnessctl --quiet s {}%"
@@ -100,7 +110,7 @@
                         (scale
                             :class "scale-sys"
                             :min 0
-                            :value 20
+                            :value {sound_volume * 100}
                             :max 100
                             :orientation "horizontal"
                             :onchange "wpctl set-volume @DEFAULT_AUDIO_SINK@ {}%"

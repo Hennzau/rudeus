@@ -1,9 +1,11 @@
 #!/bin/bash
 
 mkdir -p /etc/systemd/user/niri.service.wants/
+
 ln -s /etc/systemd/user/eww.service /etc/systemd/user/niri.service.wants/
 ln -s /etc/systemd/user/eww-open@.service /etc/systemd/user/niri.service.wants/eww-open@background.service
 ln -s /etc/systemd/user/eww-open@.service /etc/systemd/user/niri.service.wants/eww-open@window-workspaces.service
+ln -s /etc/systemd/user/eww-open@.service /etc/systemd/user/niri.service.wants/eww-open@window-sys.service
 
 ln -s /etc/systemd/user/xwayland-satellite.service /etc/systemd/user/niri.service.wants/
 

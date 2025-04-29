@@ -16,13 +16,12 @@
     `rudeus-niri`)
 
 (include "widgets/workspaces/workspaces.yuck")
-(include "widgets/wifi.yuck")
-(include "widgets/power.yuck")
+(include "widgets/sys/sys.yuck")
 
 (defwindow window-workspaces
            :monitor 0
-           :geometry (geometry :x "0%"
-                               :y "0%"
+           :geometry (geometry :x "4px"
+                               :y "4px"
                                :anchor "top left")
            :stacking "overlay"
            :exclusive false

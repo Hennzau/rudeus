@@ -1,7 +1,18 @@
 dev:
     sudo chown -R enzo rudeus
 
-deb-build:
+update-config: dev
+    cp -r ~/.config/alacritty/* rudeus/etc/rudeus/default/alacritty/.config/alacritty
+    cp -r ~/.config/eww/* rudeus/etc/rudeus/default/eww/.config/eww
+
+    cp ~/.config/fish/config.fish rudeus/etc/rudeus/default/fish/.config/fish/
+    cp -r ~/.config/niri/* rudeus/etc/rudeus/default/niri/.config/niri
+    cp ~/.config/starship.toml rudeus/etc/rudeus/default/starship/.config/
+    cp -r ~/.config/wofi/* rudeus/etc/rudeus/default/wofi/.config/wofi
+    cp -r ~/.config/yazi/* rudeus/etc/rudeus/default/yazi/.config/yazi
+    cp -r ~/.config/zed/* rudeus/etc/rudeus/default/zed/.config/zed
+
+deb-build: update-config
     sudo chown -R root:root rudeus
     dpkg-deb --build rudeus rudeus_amd64.deb
 
@@ -38,3 +49,6 @@ move-artifacts:
     cp artifacts/xwayland-satellite/target/release/xwayland-satellite rudeus/usr/local/bin
     cp artifacts/yazi/target/release/yazi rudeus/usr/local/bin
     cp artifacts/eww/target/release/eww rudeus/usr/local/bin
+
+upload-artifacts version:
+    gh release create {{version}} rudeus_amd64.deb --title "{{version}}" --notes "Rudeus release {{version}}"

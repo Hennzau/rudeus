@@ -122,6 +122,8 @@ binds {
     Mod+E { spawn "alacritty" "-e" "yazi"; }
     Mod+D { spawn "wofi" "--show" "drun"; }
 
+    Alt+Tab { toggle-overview; }
+
     Super+L { quit; }
 
     Mod+Shift+A { close-window; }

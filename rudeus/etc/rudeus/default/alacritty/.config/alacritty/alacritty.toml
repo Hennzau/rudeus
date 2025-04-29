@@ -1,5 +1,6 @@
 
 [env]
+
 TERM = "xterm-256color"
 
 [font]
@@ -26,6 +27,4 @@ family = "CaskaydiaCove Nerd Font"
 style = "Regular"
 
 [general]
-import = [
-  "~/.config/alacritty/catppuccin-mocha.toml"
-]
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]

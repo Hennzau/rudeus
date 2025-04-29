@@ -1,0 +1,72 @@
+* {
+    all: unset; // Unsets everything so you can style everything from scratch
+
+    font-family: CaskaydiaCove Nerd Font;
+}
+
+.box-sys {
+    background: #1e1e2e;
+    padding: 2px 2px; // Unchanged
+    border-radius: 12px; // Unchanged
+    border: 2px solid #cba6f7;
+    margin: 2px 2px 2px 2px; // Unchanged
+}
+
+.box-scale {
+    background: #1e1e2e;
+    padding: 2px 2px; // Unchanged
+    border-radius: 12px; // Unchanged
+    border: 2px solid #cba6f7;
+    margin: 2px 2px 2px 10px; // Unchanged
+}
+
+.box-scale-all {
+    background: #1e1e2e;
+    padding: 2px 2px; // Unchanged
+    margin: 2px 2px 2px 2px; // Unchanged
+}
+
+.scale-sys trough highlight {
+    background-color: #cba6f7;
+    border-radius: 10px;
+}
+
+scale trough {
+    all: unset;
+    background-color: #1e1e2e;
+    box-shadow: 0 2px 3px 2px #06060b;
+    border-radius: 16px;
+    min-height: 10px;
+    min-width: 70px;
+    margin: 0px 0px 0px 0px;
+}
+
+.module-essid {
+    font-size: 15px;
+    color: #cba6f7;
+}
+
+.module-wifi {
+    font-size: 15px;
+    background-color: #1e1e2e;
+    color: #b0b4bc;
+    border-radius: 100%;
+    margin: 0px 20px 0px 0px;
+}
+
+.box-power {
+    background: #1e1e2e;
+    margin: 0px 15px 0px 0px;
+}
+
+.module-power {
+    font-size: 15px;
+    background-color: #1e1e2e;
+    color: #b0b4bc;
+    margin: 0px 10px 0px 0px;
+}
+
+.module-battery {
+    font-size: 15px;
+    color: #cba6f7;
+}

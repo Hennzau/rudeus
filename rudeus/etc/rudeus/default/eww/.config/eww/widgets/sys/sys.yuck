@@ -1,0 +1,132 @@
+(defvar reveal_sys false)
+
+(defpoll battery
+            :interval "15s"
+            :initial "0.0"
+            "scripts/get_pow")
+
+(defpoll battery_status
+            :interval "1m"
+            :initial "discharging"
+            "scripts/get_pow_stat")
+
+(defvar power_rev false)
+
+(defwidget power []
+    (eventbox
+        :onhover "eww update power_rev=true"
+        :onhoverlost "eww update power_rev=false"
+    		(box
+                :vexpand "false"
+                :hexpand "false"
+                :space-evenly "false"
+                   	(revealer
+                        :transition "slideleft"
+                        :reveal power_rev
+                        :duration "350ms"
+                       	(label
+                            :class "module-battery"
+                       	    :text "${battery}%"))
+         			(circular-progress
+                        :class "module-power"
+                        :value battery
+                        :thickness 10
+                        ))))
+
+(defvar wifi_rev false)
+
+(defpoll wifi_essid
+    :interval "20s"
+    `sh scripts/get_essid`)
+
+(defwidget wifi []
+    (eventbox
+        :onhover "eww update wifi_rev=true"
+        :onhoverlost "eww update wifi_rev=false"
+    		(box
+                :vexpand "false"
+                :hexpand "false"
+                :space-evenly "false"
+    				(button
+                        :class "module-wifi"
+                        "")
+
+                   	(revealer
+                        :transition "slideright"
+                        :reveal wifi_rev
+                        :duration "350ms"
+                       	(label
+                            :class "module-essid"
+                       	    :text wifi_essid)))))
+
+
+(defwidget sys []
+    (eventbox
+        :onhover "eww update reveal_sys=true"
+        :onhoverlost "eww update reveal_sys=false"
+        (revealer
+            :transition "slidedown"
+            :reveal reveal_sys
+            :duration "350ms"
+            (box
+                :class "box-sys"
+                :orientation "vertical"
+                (box
+                    :class "box-scale-all"
+                    :orientation "horizontal"
+                    :space-evenly "false"
+                    (label
+                        :text "󰃟")
+                    (box
+                        :class "box-scale"
+                        :hexpand true
+                        (scale
+                            :class "scale-sys"
+                            :min 0
+                            :value 20
+                            :max 100
+                            :orientation "horizontal"
+                            :onchange "brightnessctl --quiet s {}%"
+                            )))
+                (box
+                    :class "box-scale-all"
+                    :orientation "horizontal"
+                    :space-evenly "false"
+                    (label
+                        :text "")
+                    (box
+                        :class "box-scale"
+                        :hexpand true
+                        (scale
+                            :class "scale-sys"
+                            :min 0
+                            :value 20
+                            :max 100
+                            :orientation "horizontal"
+                            :onchange "wpctl set-volume @DEFAULT_AUDIO_SINK@ {}%"
+                            )))
+                    (box
+                        :orientation "horizontal"
+                        (box
+                            :class "box-power"
+                            :orientation "horizontal"
+                            :halign "end"
+                            (power))
+                        (box
+                            :orientation "horizontal"
+                            :halign "start"
+                            (wifi))
+                        )))))
+
+(defwindow window-sys []
+           :monitor 0
+           :geometry
+                (geometry
+                    :x "4px"
+                    :y "0px"
+                    :width "300px"
+                    :anchor "top center")
+           :stacking "overlay"
+           :exclusive false
+           :focusable false
+    (sys))
